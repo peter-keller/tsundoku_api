@@ -1,0 +1,7 @@
+class User < ApplicationRecord
+  has_many :follower_follows, foreign_key: "followee_id", class_name: "Follower" 
+  has_many :followers, through: :follower_follows
+
+  has_many :followee_follows, foreign_key: "follower_id", class_name: "Follower"    
+  has_many :followees, through: :followee_follows
+end
