@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_06_135533) do
+ActiveRecord::Schema.define(version: 2019_05_06_140155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.text "title"
+    t.text "url"
+    t.bigint "user_id"
+    t.boolean "private"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
 
   create_table "followers", force: :cascade do |t|
     t.integer "followee_id"
@@ -30,4 +40,5 @@ ActiveRecord::Schema.define(version: 2019_05_06_135533) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "bookmarks", "users"
 end
