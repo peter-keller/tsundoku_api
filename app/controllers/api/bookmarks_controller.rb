@@ -1,18 +1,20 @@
 class Api::BookmarksController < ApplicationController
   before_action :authenticate_user
+
   def index
-    puts 'CURRENT'
-    puts current_user
-    bookmarks = Bookmark.all
+    bookmarks = current_user.bookmarks
     render json: { data: bookmarks }, status: 200
   end
 
-  # def show
-  #     bookmark = Bookmark.find_by(id: params[:id])
-  #     if bookmark
-  #         render json: {data: bookmark}, status: 200
-  #     else
-  #         render json: {data: "Not found"}, status: 400
-  #     end
-  # end
+  def create
+    puts params
+    render json: { data: "hola" }, status: 200
+
+  end
+
+  private
+
+  def bookmark_params
+
+  end
 end
