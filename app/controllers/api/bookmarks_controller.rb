@@ -7,14 +7,15 @@ class Api::BookmarksController < ApplicationController
   end
 
   def create
-    puts params
-    render json: { data: "hola" }, status: 200
-
+    @bookmark = Bookmark.new(bookmark_params)
+    @bookmark.user_id = current_user.id
+    @bookmark.save
+    render json: { data: @bookmark }, status: 200
   end
 
   private
 
   def bookmark_params
-
-  end
+    params.require(:bookmark).permit(:private, :title, :url)
+end
 end
