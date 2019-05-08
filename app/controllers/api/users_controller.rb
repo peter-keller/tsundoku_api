@@ -1,8 +1,21 @@
 class Api::UsersController < ApplicationController
-  before_action :authenticate_user
+  before_action :authenticate_user, except: [:create]
 
   def current
     render json: current_user.as_json(only: %i[id email])
+  end
+
+  def create
+    user = User.new(user_params)
+    
+    if user.save
+        # byebug
+        # jwt = Knock::AuthToken.new user.to_token_payload
+        redirect_to api_user_token_path, params: { auth: {email: user.email, password: user.password }}, status: 307
+        #render json: { status: 200, data: current_user.as_json(only: %i[id email]) }, status: :ok
+    else
+      render json: { status: 500, data: user.errors }, status: :unprocessable_entity
+    end
   end
 
   #   def index
@@ -16,15 +29,6 @@ class Api::UsersController < ApplicationController
   #       render json: { status: 200, data: user }, status: :ok
   #     else
   #       render json: { status: 422, message: 'No user' }, status: :unprocessable_entity
-  #     end
-  #   end
-
-  #   def create
-  #     user = User.find_or_create_by(user_params)
-  #     if user.save
-  #       render json: { status: 200, data: user }, status: :ok
-  #     else
-  #       render json: { status: 500, data: user.errors }, status: :unprocessable_entity
   #     end
   #   end
 
@@ -45,6 +49,6 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
-end
+    params.require(:auth).permit(:email, :password, :password_confirmation)
+  end
 end

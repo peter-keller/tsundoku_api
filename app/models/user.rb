@@ -17,6 +17,6 @@ class User < ApplicationRecord
     {
       sub: id,
       email: email
-    }
-end
+    } 
+  end
 end
