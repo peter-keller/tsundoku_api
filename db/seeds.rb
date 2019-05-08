@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-ranjit = User.create(name: "Ranjit", password: "12345", email: "ranjit@ranjit.com")
-pete = User.create(name: "Pete", password: "12345", email: "pete@pete.com")
-myrto = User.create(name: "Myrto", password: "12345", email: "myrto@myrto.com")
+ranjit = User.create(name: "Ranjit", password: "12345678", email: "ranjit@ranjit.com")
+pete = User.create(name: "Pete", password: "12345678", email: "pete@pete.com")
+myrto = User.create(name: "Myrto", password: "12345678", email: "myrto@myrto.com")
 
 ranjit.bookmarks.build(title: "Dataism article", url: "https://medium.com/understanding-us/dataism-god-is-in-the-algorithm-84af800205cd", private: false).save
 ranjit.bookmarks.build(title: "TBL essay", url: "https://www.w3.org/DesignIssues/LinkedData.html", private: false).save

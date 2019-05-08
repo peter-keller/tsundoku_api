@@ -12,6 +12,16 @@ class Api::BookmarksController < ApplicationController
     @bookmark.save
     render json: { data: @bookmark }, status: 200
   end
+  
+  def destroy
+    @bookmark = Bookmark.find_by(id: params[:id])
+    if @bookmark
+      @bookmark.destroy
+      render json: {message: 'Comment successfully deleted.'}
+    else
+      render json: {error: 'Comment not found.'}, status: 404
+    end
+  end
 
   private
 
