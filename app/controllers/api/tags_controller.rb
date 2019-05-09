@@ -6,4 +6,9 @@ class Api::TagsController < ApplicationController
         render json: { data: tags }, status: 200
     end
 
+    def search
+        tags = Tag.where('lower(name) like ?', "%#{params[:search].downcase}%")
+        # gave up at this point 
+    end
+
 end
