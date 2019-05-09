@@ -1,21 +1,6 @@
 class ApplicationController < ActionController::API
   include Knock::Authenticable
 
-  # helper_method :current_user
+  serialization_scope :view_context
 
-  # def current_user
-  #   if session[:user_id]
-  #     @current_user ||= User.find(session[:user_id])
-  #   else
-  #     @current_user = nil
-  #   end
-  # end
-
-  # def logged_in?
-  #   if current_user
-  #     true
-  #   else
-  #     redirect_to root_path
-  #   end
-  # end
 end

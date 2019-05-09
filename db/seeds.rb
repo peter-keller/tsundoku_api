@@ -43,3 +43,4 @@ myrto.bookmarks.build(title: "Thrill list", url: "https://www.thrillist.com/ente
 myrto.bookmarks.build(title: "South Park", url: "https://www.reddit.com/r/southpark/comments/3okf7q/best_place_to_watch_south_park_online/", private: false).save
 myrto.bookmarks.build(title: "Studio Ghibli", url: "http://moviemezzanine.com/studio-ghibli-retrospective-nausicaa/", private: false).save
 myrto.bookmarks.build(title: "Sopranos", url: "https://123movies0.to/tvseries/watch-the-sopranos-season-4-123movies-online/6782/#player", private: false).save
+

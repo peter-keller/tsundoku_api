@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     post 'users' => 'users#create'
     resources :bookmarks
     resources :tags
+    resources :groups
   end
 end
