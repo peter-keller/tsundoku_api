@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     get 'users/current' => 'users#current'
     post 'users' => 'users#create'
     post 'search' => 'groups#search'
-    post 'search' => 'tags#search'
+    post 'share/:id' => 'groups#share'
+    #post 'search' => 'tags#search'
     resources :bookmarks
     resources :tags
     resources :groups

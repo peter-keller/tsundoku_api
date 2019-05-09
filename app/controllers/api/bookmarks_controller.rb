@@ -25,6 +25,7 @@ class Api::BookmarksController < ApplicationController
       render json: { error: 'Comment not found.' }, status: 404
     end
   end
+  
 
   private
 
