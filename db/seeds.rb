@@ -17,19 +17,19 @@ r3 = ranjit.bookmarks.build(title: "Manu video", url: "https://www.youtube.com/w
 r4 = ranjit.bookmarks.build(title: "JSON-LD primer", url: "https://json-ld.org/primer/latest/", private: false).save
 r5 = ranjit.bookmarks.build(title: "Graph article", url: "https://jbarrasa.com/2016/09/12/the-hidden-connections-in-googles-knowledge-graph/", private: false).save
 
-ranjit.bookmarks[0].tags << Tag.find_or_create_by(name: "Linked Data")
+ranjit.bookmarks[0].tags << Tag.find_or_create_by(name: "Linked data")
 ranjit.bookmarks[0].tags << Tag.find_or_create_by(name: "Dataism")
 
-ranjit.bookmarks[1].tags << Tag.find_or_create_by(name: "Linked Data")
-ranjit.bookmarks[1].tags << Tag.find_or_create_by(name: "TBL")
+ranjit.bookmarks[1].tags << Tag.find_or_create_by(name: "Linked data")
+ranjit.bookmarks[1].tags << Tag.find_or_create_by(name: "Tbl")
 
-ranjit.bookmarks[2].tags << Tag.find_or_create_by(name: "Linked Data")
-ranjit.bookmarks[2].tags << Tag.find_or_create_by(name: "TBL")
+ranjit.bookmarks[2].tags << Tag.find_or_create_by(name: "Linked data")
+ranjit.bookmarks[2].tags << Tag.find_or_create_by(name: "Tbl")
 
-ranjit.bookmarks[3].tags << Tag.find_or_create_by(name: "Linked Data")
+ranjit.bookmarks[3].tags << Tag.find_or_create_by(name: "Linked data")
 ranjit.bookmarks[3].tags << Tag.find_or_create_by(name: "Graph")
 
-ranjit.bookmarks[4].tags << Tag.find_or_create_by(name: "Linked Data")
+ranjit.bookmarks[4].tags << Tag.find_or_create_by(name: "Linked data")
 ranjit.bookmarks[4].tags << Tag.find_or_create_by(name: "Graph")
 
 pete.bookmarks.build(title: "Hacker news", url: "https://news.ycombinator.com/item?id=11696329", private: false).save
