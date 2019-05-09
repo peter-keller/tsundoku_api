@@ -9,8 +9,7 @@ class Api::BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.user_id = current_user.id
-    byebug
-    params[:names].each do |tag| 
+    params[:tags].each do |tag| 
       @bookmark.tags << Tag.find_or_create_by(name: tag)
     end 
     @bookmark.save
@@ -30,6 +29,6 @@ class Api::BookmarksController < ApplicationController
   private
 
   def bookmark_params
-    params.require(:bookmark).permit(:private, :title, :url, :names)
+    params.require(:bookmark).permit(:private, :title, :url, :tags)
 end
 end
