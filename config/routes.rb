@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     get 'users/current' => 'users#current'
     post 'users' => 'users#create'
     resources :bookmarks
+    resources :tags
   end
 end
