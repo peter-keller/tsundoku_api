@@ -11,11 +11,26 @@ ranjit = User.create(name: "Ranjit", password: "12345678", email: "ranjit@ranjit
 pete = User.create(name: "Pete", password: "12345678", email: "pete@pete.com")
 myrto = User.create(name: "Myrto", password: "12345678", email: "myrto@myrto.com")
 
-ranjit.bookmarks.build(title: "Dataism article", url: "https://medium.com/understanding-us/dataism-god-is-in-the-algorithm-84af800205cd", private: false).save
-ranjit.bookmarks.build(title: "TBL essay", url: "https://www.w3.org/DesignIssues/LinkedData.html", private: false).save
-ranjit.bookmarks.build(title: "Manu video", url: "https://www.youtube.com/watch?v=5haIUu6OvRU", private: false).save
-ranjit.bookmarks.build(title: "JSON-LD primer", url: "https://json-ld.org/primer/latest/", private: false).save
-ranjit.bookmarks.build(title: "Graph article", url: "https://jbarrasa.com/2016/09/12/the-hidden-connections-in-googles-knowledge-graph/", private: false).save
+r1 = ranjit.bookmarks.build(title: "Dataism article", url: "https://medium.com/understanding-us/dataism-god-is-in-the-algorithm-84af800205cd", private: false).save
+r2 = ranjit.bookmarks.build(title: "TBL essay", url: "https://www.w3.org/DesignIssues/LinkedData.html", private: false).save
+r3 = ranjit.bookmarks.build(title: "Manu video", url: "https://www.youtube.com/watch?v=5haIUu6OvRU", private: false).save
+r4 = ranjit.bookmarks.build(title: "JSON-LD primer", url: "https://json-ld.org/primer/latest/", private: false).save
+r5 = ranjit.bookmarks.build(title: "Graph article", url: "https://jbarrasa.com/2016/09/12/the-hidden-connections-in-googles-knowledge-graph/", private: false).save
+
+ranjit.bookmarks[0].tags << Tag.find_or_create_by(name: "Linked Data")
+ranjit.bookmarks[0].tags << Tag.find_or_create_by(name: "Dataism")
+
+ranjit.bookmarks[1].tags << Tag.find_or_create_by(name: "Linked Data")
+ranjit.bookmarks[1].tags << Tag.find_or_create_by(name: "TBL")
+
+ranjit.bookmarks[2].tags << Tag.find_or_create_by(name: "Linked Data")
+ranjit.bookmarks[2].tags << Tag.find_or_create_by(name: "TBL")
+
+ranjit.bookmarks[3].tags << Tag.find_or_create_by(name: "Linked Data")
+ranjit.bookmarks[3].tags << Tag.find_or_create_by(name: "Graph")
+
+ranjit.bookmarks[4].tags << Tag.find_or_create_by(name: "Linked Data")
+ranjit.bookmarks[4].tags << Tag.find_or_create_by(name: "Graph")
 
 pete.bookmarks.build(title: "Hacker news", url: "https://news.ycombinator.com/item?id=11696329", private: false).save
 pete.bookmarks.build(title: "Canvas tutorial", url: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial", private: false).save
