@@ -16,6 +16,11 @@ class Api::GroupsController < ApplicationController
     end
   end
 
+  def search
+    groups = Group.where('lower(name) like ?', "%#{params[:search].downcase}%")
+    render json: groups
+  end
+
   private
 
   def group_params

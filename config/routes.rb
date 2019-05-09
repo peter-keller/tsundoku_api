@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     post 'user/token' => 'user_token#create'
     get 'users/current' => 'users#current'
     post 'users' => 'users#create'
+    post 'search' => 'groups#search'
     resources :bookmarks
     resources :tags
     resources :groups

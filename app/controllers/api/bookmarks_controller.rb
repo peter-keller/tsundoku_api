@@ -10,8 +10,6 @@ class Api::BookmarksController < ApplicationController
     bookmark = Bookmark.new(bookmark_params)
     bookmark.user_id = current_user.id
     params[:tags].each do |tag|
-    byebug
-      
       bookmark.tags << Tag.find_or_create_by(name: tag.capitalize)
     end
     bookmark.save
