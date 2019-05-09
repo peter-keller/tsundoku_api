@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-ranjit = User.create(name: "Ranjit", password: "12345", email: "ranjit@ranjit.com")
-pete = User.create(name: "Pete", password: "12345", email: "pete@pete.com")
-myrto = User.create(name: "Myrto", password: "12345", email: "myrto@myrto.com")
+ranjit = User.create(name: "Ranjit", password: "12345678", email: "ranjit@ranjit.com")
+pete = User.create(name: "Pete", password: "12345678", email: "pete@pete.com")
+myrto = User.create(name: "Myrto", password: "12345678", email: "myrto@myrto.com")
 
 ranjit.bookmarks.build(title: "Dataism article", url: "https://medium.com/understanding-us/dataism-god-is-in-the-algorithm-84af800205cd", private: false).save
 ranjit.bookmarks.build(title: "TBL essay", url: "https://www.w3.org/DesignIssues/LinkedData.html", private: false).save
@@ -28,3 +28,4 @@ myrto.bookmarks.build(title: "Thrill list", url: "https://www.thrillist.com/ente
 myrto.bookmarks.build(title: "South Park", url: "https://www.reddit.com/r/southpark/comments/3okf7q/best_place_to_watch_south_park_online/", private: false).save
 myrto.bookmarks.build(title: "Studio Ghibli", url: "http://moviemezzanine.com/studio-ghibli-retrospective-nausicaa/", private: false).save
 myrto.bookmarks.build(title: "Sopranos", url: "https://123movies0.to/tvseries/watch-the-sopranos-season-4-123movies-online/6782/#player", private: false).save
+

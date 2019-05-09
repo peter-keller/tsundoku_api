@@ -13,10 +13,13 @@ class User < ApplicationRecord
 
   has_many :bookmarks
 
+  has_many :group_members
+  has_many :groups, through: :group_members
+
   def to_token_payload
     {
       sub: id,
       email: email
-    } 
+    }
   end
 end

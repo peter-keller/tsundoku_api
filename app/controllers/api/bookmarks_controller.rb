@@ -7,10 +7,11 @@ class Api::BookmarksController < ApplicationController
   end
 
   def create
-    @bookmark = Bookmark.new(bookmark_params)
-    @bookmark.user_id = current_user.id
-    @bookmark.save
-    render json: { data: @bookmark }, status: 200
+    bookmark = Bookmark.new(bookmark_params)
+    bookmark.user_id = current_user.id
+    if bookmark.save
+      render json: { data: bookmark }, status: 200
+    end
   end
 
   private
