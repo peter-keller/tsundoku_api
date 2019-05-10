@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     post 'users' => 'users#create'
     post 'search' => 'groups#search'
     post 'share/:id' => 'groups#share'
+    post 'join/:id' => 'groups#pleasejoin'
     #post 'search' => 'tags#search'
     resources :bookmarks
     resources :tags
