@@ -26,18 +26,27 @@ class Api::GroupsController < ApplicationController
     if group
       render json: group.bookmarks
     else
-      render json: {data: "error"}, status: 500
+      render json: { data: 'error' }, status: 500
     end
   end
 
   def share
-    byebug
     group = Group.find_by(id: params[:id])
     if group
       group.bookmarks << Bookmark.find_by(id: params[:bookmark_id])
       render json: group
     else
-      render json: {data: 'error'}, status: 500
+      render json: { data: 'error' }, status: 500
+    end
+  end
+
+  def joingroup
+    group = Group.find_by(id: params[:id])
+    if group.users.include?(current_user)
+      render json: group
+    else
+      group.users << current_user
+      render json: { data: 'error' }, status: 200
     end
   end
 
