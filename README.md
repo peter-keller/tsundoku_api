@@ -1,24 +1,25 @@
-# README
+# Tsundoku Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tsundoku is a web app that let's users to save their bookmarks and share it with others.
 
-Things you may want to cover:
+- How to set up:
+  - Prerequisites
+    - Ruby 2.5.1
+    - Rails 5.2.2.1
+    - PostgreSQL
 
-* Ruby version
+* How to run:
 
-* System dependencies
+  - `git clone https://github.com/peter-keller/tsundoku_api`
+  - `cd tsundoku_api`
+  - `bundle install`
+  - `bin/rails credentials:edit`
+  - `rails db:create`
+  - `rails db:migrate`
+  - `rails db:seed`
+  - `rails s`
+  - Once it's done, the app will run on `http://localhost:3000`
 
-* Configuration
+The front end of this project can be found here:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### [Tsundoku Frontend](https://github.com/peter-keller/tsundoku_client)
